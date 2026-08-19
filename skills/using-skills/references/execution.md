@@ -12,6 +12,13 @@ On load, opencode:
 4. Provides the skill's base directory and a sample of up to ten supporting
    file paths
 
+## Recursion guard
+
+`using-skills` and any other meta-skill apply once per session. After loading
+one, do not load it again to satisfy its own instruction — that is the recursion
+loop that stalls a conversation. A meta-skill governs until its guidance is
+complete; it never needs re-invoking for subsequent turns.
+
 ## Supporting files are NOT auto-loaded
 
 A skill directory may contain `references/` (load-on-demand documentation),

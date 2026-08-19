@@ -60,9 +60,9 @@ startup.
 
 ## Usage
 
-No invocation needed — that's the point. `using-skills` is a meta-skill that
-activates at the start of any conversation and governs how the agent treats
-every other skill. It teaches:
+No manual invocation needed — that's the point. `using-skills` is a meta-skill
+that activates once when a conversation or task starts and governs how the agent
+treats every other skill. It teaches:
 
 1. **Discover** — read the `skill` tool's `<available_skills>` advertisement
    (fallback: scan `~/.config/opencode/skills`, `.opencode/skills`,
@@ -77,7 +77,7 @@ every other skill. It teaches:
 
 ```
 skills/using-skills/
-├── SKILL.md                    # the rule: invoke before ANY response
+├── SKILL.md                    # the rule: check for a matching skill at task start
 └── references/
     ├── discovery.md            # enumerating skills on any install
     ├── selection.md            # trigger matching, priority, red flags

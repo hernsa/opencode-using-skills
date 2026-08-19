@@ -1,6 +1,6 @@
 ---
 name: using-skills
-description: Use when starting any conversation or before any response - establishes how to discover, select, load, and follow agent skills, requiring skill invocation before ANY response. Works with any skill set on any opencode install.
+description: Use when starting a conversation or new task to decide whether an applicable skill exists - teaches how to discover, select, load, and follow agent skills on any opencode install. Applies once per session; never re-invoke it to satisfy its own rule.
 license: MIT
 compatibility: opencode
 metadata:
@@ -12,8 +12,16 @@ metadata:
 If you were dispatched as a subagent to execute a specific task, ignore this skill.
 </SUBAGENT-STOP>
 
+<RECURSION-GUARD>
+`using-skills` governs once per session. Never invoke it — or any already-loaded
+meta-skill — to satisfy its own instruction. Re-invoking a loaded meta-skill is
+the recursion bug that stalls sessions. If no concrete skill matches the task,
+proceed without invoking anything.
+</RECURSION-GUARD>
+
 <EXTREMELY-IMPORTANT>
-If you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.
+If you think there is even a 1% chance a concrete skill might apply to the task
+at hand, invoke it.
 
 IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
 
@@ -22,7 +30,12 @@ This is not negotiable. You cannot rationalize your way out of this.
 
 ## The Rule
 
-**Invoke relevant or requested skills BEFORE any response or action** — including clarifying questions, exploring the codebase, or checking files. If it turns out wrong for the situation, you don't have to use it.
+**Check for a matching skill at the start of a conversation or a new task** —
+including before clarifying questions, exploring the codebase, or checking
+files. Invoke the skill that matches before the work that needs it.
+
+This skill applies ONCE per session. If you are already following it, you are
+already compliant — do not re-invoke it to start another turn.
 
 Then announce "Using [skill] to [purpose]" and follow the skill exactly. If it has a checklist, create a todo per item.
 
@@ -66,6 +79,7 @@ These thoughts mean STOP — you're rationalizing:
 | "I'll just do this one thing first" | Check BEFORE doing anything. |
 | "This feels productive" | Undisciplined action wastes time. Skills prevent this. |
 | "I know what that means" | Knowing the concept ≠ using the skill. Invoke it. |
+| "I already loaded using-skills, load it again" | It applies once per session — re-invoking it is the recursion bug. |
 
 ## User Instructions
 
