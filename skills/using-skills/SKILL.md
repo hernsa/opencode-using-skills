@@ -1,6 +1,6 @@
 ---
 name: using-skills
-description: Use when starting a conversation or new task to decide whether an applicable skill exists - teaches how to discover, select, load, and follow agent skills on any opencode install. Applies once per session; never re-invoke it to satisfy its own rule.
+description: Use when starting a conversation or new task to find matching skills — teaches discover, select, load, follow on any opencode install. Once per session; never re-invoke.
 license: MIT
 compatibility: opencode
 metadata:
@@ -47,7 +47,9 @@ If the `skill` tool is hidden or disabled, fall back to scanning skill directori
 
 - `~/.config/opencode/skills/**/SKILL.md` (global)
 - `.opencode/skills/**/SKILL.md`, `.claude/skills/**/SKILL.md`, `.agents/skills/**/SKILL.md` (project)
-- Any extra paths listed in the config `skills` array
+- Any extra paths listed in the config `skills.paths`
+
+Deep rules: see `references/discovery.md`.
 
 ## 2. Select the right skill
 
@@ -55,11 +57,15 @@ If the `skill` tool is hidden or disabled, fall back to scanning skill directori
 - When multiple skills apply, **process skills come first**: they set the approach, then implementation skills carry it out.
 - If no skill clearly applies, do the work directly. Skills are force multipliers, not paperwork.
 
+Deep rules: see `references/selection.md`.
+
 ## 3. Load and follow
 
 - Call the `skill` tool with the exact skill ID. The body loads into the conversation; supporting files in `references/` and `scripts/` do NOT auto-load — read them when the skill tells you to.
 - Follow the skill exactly. If it has a checklist, create a todo per item. Don't skip steps, don't improvise around them.
 - If a skill turns out wrong for the situation, stop using it — you don't have to finish it.
+
+Deep rules: see `references/execution.md`.
 
 ## Red Flags
 
