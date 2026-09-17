@@ -34,12 +34,11 @@ more detail than the advertisement gives, scan for `SKILL.md` files directly:
 | Global compatibility | `~/.claude/skills/<name>/SKILL.md`, `~/.agents/skills/<name>/SKILL.md` |
 | Project | `.opencode/skills/<name>/SKILL.md` |
 | Project compatibility | `.claude/skills/<name>/SKILL.md`, `.agents/skills/<name>/SKILL.md` |
-| Extra | Any path listed in the `skills` array of `opencode.json` / `opencode.jsonc` |
+| Extra | Any path listed in `skills.paths` of `opencode.json` / `opencode.jsonc` |
 
 Project paths are searched upward from the current working directory to the
-project root. Within each source directory, both `skills/<name>/SKILL.md`
-(directory form, recommended) and `skills/<name>.md` (flat form) are
-discovered.
+project root. Within each source directory, skills are discovered as
+`skills/<name>/SKILL.md` (directory form, recommended).
 
 ## Reading a skill before loading it
 

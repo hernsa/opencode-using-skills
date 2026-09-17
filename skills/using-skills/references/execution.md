@@ -2,7 +2,7 @@
 
 ## Loading
 
-Call the `skill` tool with the exact ID from the advertisement (e.g. `using-skills`).
+Call the `skill` tool with the exact ID from the advertisement (e.g. the advertised skill ID).
 On load, opencode:
 
 1. Resolves the winning definition for that ID (see discovery.md for precedence)
