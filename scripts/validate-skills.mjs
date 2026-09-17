@@ -94,8 +94,12 @@ if (existsSync(indexPath)) {
       if (!catalogNames.includes(name))
         errors.push(`index.json: missing catalog entry for '${name}'`);
       const entry = (index.skills ?? []).find((s) => s.name === name);
-      if (entry && typeof entry.version !== "number")
-        errors.push(`index.json: '${name}' must have a numeric 'version'`);
+      if (entry && typeof entry.version !== "number" && typeof entry.version !== "string")
+        errors.push(`index.json: '${name}' must have a numeric or string 'version'`);
+      if (entry && Array.isArray(entry.files))
+        for (const f of entry.files)
+          if (!existsSync(join(dir, f)))
+            errors.push(`index.json: '${name}' lists missing file '${f}'`);
     }
   } catch (e) {
     errors.push(`index.json: invalid JSON (${e.message})`);

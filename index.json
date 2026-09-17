@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "using-skills",
-      "version": 2,
+      "version": "2",
       "files": [
         "SKILL.md",
         "references/discovery.md",
