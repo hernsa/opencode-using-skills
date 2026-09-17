@@ -2,12 +2,13 @@
   "skills": [
     {
       "name": "using-skills",
-      "version": "2",
+      "version": "3",
       "files": [
         "SKILL.md",
         "references/discovery.md",
         "references/selection.md",
-        "references/execution.md"
+        "references/execution.md",
+        "references/writing-skills.md"
       ]
     }
   ]

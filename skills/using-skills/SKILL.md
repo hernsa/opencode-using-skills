@@ -39,6 +39,8 @@ already compliant — do not re-invoke it to start another turn.
 
 Then announce "Using [skill] to [purpose]" and follow the skill exactly. If it has a checklist, create a todo per item.
 
+Writing skills that trigger well: see `references/writing-skills.md`.
+
 ## 1. Discover what skills exist
 
 Every opencode session advertises its available skills in the `skill` tool's description as `<available_skills>` entries — ID, name, and description. That list is your ground truth for this install. Read it before acting.
