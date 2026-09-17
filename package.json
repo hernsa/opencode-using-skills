@@ -1,0 +1,12 @@
+{
+  "name": "opencode-using-skills",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node scripts/validate-skills.mjs && node --check scripts/validate-skills.mjs && node --check scripts/test-catalog-http.mjs",
+    "test": "node --test scripts/validate-skills.test.mjs"
+  },
+  "devDependencies": {
+    "yaml": "2.9.1"
+  }
+}
