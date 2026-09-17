@@ -16,5 +16,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Validate skills
-        run: node scripts/validate-skills.mjs
+          cache: npm
+      - name: Install deps
+        run: npm ci
+      - name: Lint and syntax checks
+        run: npm run lint
+      - name: Run tests
+        run: npm test
+      - name: Catalog HTTP layout check
+        run: node scripts/test-catalog-http.mjs
