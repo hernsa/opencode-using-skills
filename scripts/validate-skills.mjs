@@ -76,7 +76,7 @@ for (const dir of listSkillDirs(skillsDir)) {
   // response" or "at the start of every response" — that phrasing makes the
   // skill re-trigger itself every turn and stalls the session.
   const recursiveTrigger =
-    /before\s+(?:any|every)\s+response/i.test(`${fm.description}\n${body}`);
+    /\b(?:before|at\s+the\s+(?:start|beginning)\s+of|on)\s+(?:any|every|each)\s+response\b/i.test(`${fm.description}\n${body}`);
   if (recursiveTrigger)
     errors.push(
       `${name}: description/body contains a recursive trigger ('before ANY response') — this caused the infinite self-invocation bug; scope triggers to task/conversation start instead`
