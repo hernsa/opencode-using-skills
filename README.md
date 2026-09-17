@@ -53,7 +53,9 @@ Then in `~/.config/opencode/opencode.json` (or project `opencode.json`):
 
 The repo ships a `skills/index.json` catalog manifest; opencode downloads the skill
 files from it and caches them. Bump the `version` in `skills/index.json` when files
-change so clients refresh.
+change so clients refresh. **Version must be a non-empty string** (e.g. `"2"`, not `2`).
+
+Tested with OpenCode v0.4.0+. Other versions may differ in skill loading behavior.
 
 After any install, **restart opencode** — config and skills are loaded at
 startup.
@@ -108,7 +110,8 @@ nothing until it is needed.
 ## Development
 
 ```bash
-node scripts/validate-skills.mjs   # lints all SKILL.md files
+npm run lint      # lints all SKILL.md files + syntax checks
+npm test          # runs validator test suite
 ```
 
 The linter checks that every `SKILL.md` has valid frontmatter (required

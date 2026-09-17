@@ -3,7 +3,7 @@
 ## Supported versions
 
 Only the latest state of the `main` branch is supported. Security fixes land
-there and are released via tag.
+there and are pushed to `main`.
 
 ## Reporting a vulnerability
 
