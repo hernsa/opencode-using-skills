@@ -18,7 +18,7 @@ would dilute the repo's single purpose.
   description front-loaded with trigger keywords and under ~250 characters.
 - Keep `SKILL.md` bodies short (< 150 lines). Push depth into
   `references/*.md`, loaded on demand.
-- Every change to a skill's files must bump the `version` in `index.json` so
+- Every change to a skill's files must bump the `version` in `skills/index.json` so
   catalog installs refresh.
 - Run `node scripts/validate-skills.mjs` before committing. All files in the
   repo must pass.

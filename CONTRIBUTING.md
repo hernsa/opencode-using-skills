@@ -17,7 +17,7 @@ skill-packs.
 1. Fork the repo and clone your fork.
 2. Make your change.
 3. Run the validator: `node scripts/validate-skills.mjs`
-4. If you changed skill files, bump `version` in `index.json`.
+4. If you changed skill files, bump `version` in `skills/index.json`.
 5. Commit with a clear message, push, and open a PR.
 
 ## Style
@@ -32,7 +32,7 @@ skill-packs.
 ## PR checklist
 
 - [ ] `node scripts/validate-skills.mjs` passes
-- [ ] `index.json` version bumped if skill files changed
+- [ ] `skills/index.json` version bumped if skill files changed
 - [ ] README updated if install/usage changed
 - [ ] Changes are scoped to the `using-skills` skill or its packaging
 

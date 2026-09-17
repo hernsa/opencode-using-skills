@@ -84,7 +84,7 @@ for (const dir of listSkillDirs(skillsDir)) {
 }
 
 // index.json catalog check
-const indexPath = join(root, "index.json");
+const indexPath = join(root, "skills", "index.json");
 if (existsSync(indexPath)) {
   try {
     const index = JSON.parse(readFileSync(indexPath, "utf8"));

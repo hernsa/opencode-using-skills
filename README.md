@@ -46,13 +46,13 @@ Then in `~/.config/opencode/opencode.json` (or project `opencode.json`):
 ```json
 {
   "skills": {
-    "urls": ["https://raw.githubusercontent.com/hernsa/opencode-using-skills/main/"]
+    "urls": ["https://raw.githubusercontent.com/hernsa/opencode-using-skills/main/skills/"]
   }
 }
 ```
 
-The repo ships an `index.json` catalog manifest; opencode downloads the skill
-files from it and caches them. Bump the `version` in `index.json` when files
+The repo ships a `skills/index.json` catalog manifest; opencode downloads the skill
+files from it and caches them. Bump the `version` in `skills/index.json` when files
 change so clients refresh.
 
 After any install, **restart opencode** — config and skills are loaded at
@@ -96,9 +96,11 @@ nothing until it is needed.
 ├── AGENTS.md                  # conventions for AI contributors
 ├── CONTRIBUTING.md
 ├── SECURITY.md
-├── index.json                 # HTTP catalog manifest
-├── skills/using-skills/       # the skill
+├── skills/
+│   ├── index.json               # HTTP catalog manifest
+│   └── using-skills/            # the skill
 ├── scripts/validate-skills.mjs
+├── scripts/test-catalog-http.mjs
 ├── examples/usage.md
 └── .github/workflows/validate.yml
 ```
